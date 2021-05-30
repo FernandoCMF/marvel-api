@@ -1,0 +1,50 @@
+
+.search-form {
+  min-height: 10vg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  background-color: #01002D;
+  color: #FFFEFE;
+  width: 50%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.search-button {
+  background-color: #01002D;
+  color: #FFFEFE;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.container-card {
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgb(60, 60, 60);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #FFFEFE;
+  align-items: center;
+  min-width: 40%;
+  
+}
+
+.card-corpo{
+  justify-content: center;
+  font-size: 18px;
+  text-align: center;
+}
+
+.imagens {
+  border-radius: 3px;
+}

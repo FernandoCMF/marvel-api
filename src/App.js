@@ -1,10 +1,13 @@
 import React from 'react';
-import Characters from './Pages/Characters/Index'
+import Character from './pages/characters/Character';
+import logo from './assets/Logo-Marvel.png'
+import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <Characters/>
+      <img className="logo" src={logo}/>
+      <Character/>
     </div>
   );
 }
