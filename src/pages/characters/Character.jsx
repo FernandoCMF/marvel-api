@@ -10,7 +10,7 @@ const Characters = () => {
     const [consulta, setConsulta] = useState('spider-man');
 
     useEffect(() => {
-        api.get(`/comics?title=${consulta}`)
+         api.get(`/comics?title=${consulta}`)
             .then(response => {
                 setPersonagens(response.data.data.results)
                 console.log(response.data.data.results);
@@ -43,11 +43,13 @@ const Characters = () => {
 
                     <div className="container-card" key={`${per.id}`}>
                         <div className="card">
-                            <h1 className="card-titulo">{per.title}</h1>
+                            
+                        <h1 className="card-titulo">{per.title}</h1>
                             <img
                                 className="imagens"
                                 src={`${per.thumbnail.path}/standard_fantastic.${per.thumbnail.extension}`}
                             />
+                            
                             <div className="card-corpo">
                                 <p className="sobre">{per.description}</p>
                             </div>
