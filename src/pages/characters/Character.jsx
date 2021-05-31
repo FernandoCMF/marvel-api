@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import "./Character.css";
 import api from '../../service/Api';
 
-
+//
 const Characters = () => {
 
     const [personagens, setPersonagens] = useState([]);
     const [busca, setBusca] = useState("");
-    const [consulta, setConsulta] = useState('hulk');
+    const [consulta, setConsulta] = useState('spider-man');
 
     useEffect(() => {
-        api.get(`/characters?name=${consulta}`)
+        api.get(`/comics?title=${consulta}`)
             .then(response => {
                 setPersonagens(response.data.data.results)
                 console.log(response.data.data.results);
@@ -42,14 +42,17 @@ const Characters = () => {
                 personagens.map(per => (
 
                     <div className="container-card" key={`${per.id}`}>
-                        <h1 className="card-titulo">{per.name}</h1>
-                        <img
-                            className="imagens"
-                            src={`${per.thumbnail.path}/standard_fantastic.${per.thumbnail.extension}`}
-                        />
-                        <div className="card-corpo">
-                            <p className="sobre">{per.description}</p>
+                        <div className="card">
+                            <h1 className="card-titulo">{per.title}</h1>
+                            <img
+                                className="imagens"
+                                src={`${per.thumbnail.path}/standard_fantastic.${per.thumbnail.extension}`}
+                            />
+                            <div className="card-corpo">
+                                <p className="sobre">{per.description}</p>
+                            </div>
                         </div>
+
                     </div>
                 ))
             }
