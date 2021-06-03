@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import "./Character.css";
 import api from '../../service/Api';
+import "./Comics.css";
+import SearchBar from '../../Components/searchBar/SearchBar';
 
-//
-const Characters = () => {
+const Comics = () => {
 
     const [personagens, setPersonagens] = useState([]);
     const [busca, setBusca] = useState("");
@@ -30,14 +30,7 @@ const Characters = () => {
 
     return (
         <div className="container">
-            <form className="search-form" onSubmit={getBusca}>
-                <input className="search-bar"
-                    type="text"
-                    value={busca}
-                    onChange={updateBusca}
-                />
-                <button className="search-button" type="submit">Buscar</button>
-            </form>
+            <SearchBar gBusca={getBusca} vBusca={busca} uBusca={updateBusca}/>
             {
                 personagens.map(per => (
 
@@ -48,6 +41,7 @@ const Characters = () => {
                             <img
                                 className="imagens"
                                 src={`${per.thumbnail.path}/standard_fantastic.${per.thumbnail.extension}`}
+                                alt="thumbnail"
                             />
                             
                             <div className="card-corpo">
@@ -62,4 +56,4 @@ const Characters = () => {
     );
 }
 
-export default Characters;
+export default Comics;
